@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programming Challenge</title>
+    <link rel="stylesheet" href="lib/jquery-ui-1.13.0.custom/jquery-ui.min.css" />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+<h2>Programming Challenge - Get Weather Data with AJAX and JSON</h2>
+<div>
+    <p>Temperature Units</p>
+    <table style="width:300px; border: none">
+        <tr>
+            <td style="width:50%; border:none ">
+                <input type="radio" id="metric" name="units" value="metric">
+                <label for="metric">Metric</label>
+            </td>
+            <td style="width:50%; border: none;">
+                <input type="radio" id="british" name="units" value="british" checked="checked">
+                <label for="british">Imperial</label>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <hr />
+    <br />
+    <div>
+        <input type="button" id="btnGet" value="Get Weather" />
+    </div>
+    <br />
+    <div>
+        <div id="weatherTable" style="visibility: hidden">
+            <table id="weatherList" cellpadding="10" cellspacing="0" border="1" title="Click any cell for a detailed forecast.">
+                <thead>
+                    <tr>
+                        <td>Date</td>
+                        <td>Max Temp</td>
+                        <td>Forecast</td>
+                        <!--
+                    <td>Date</td>
+                    <td>Forecast</td>
+                    <td>Min Temp</td>
+                    <td>Max Temp</td>
+                -->
+                    </tr>
+                </thead>
+                <tbody id="weatherListBody">
+                </tbody>
+            </table>
+        </div>
+        <div id="details">
+            <p>Date: <span id="detailDt"></span></p>
+            <p>Temperature Units: <span id="tempunits"></span></p>
+            <p>Low Temperature: <span id="lowtemp"></span></p>
+            <p>High Temperature: <span id="hightemp"></span></p>
+            <p>Forecast: <span id="forecast"></span>&nbsp;<span><img id='popupImg' /></span></p>
+            <input type="button" value="Close" id="hideDetails" />
+        </div>
+        <div id="wait">
+            <img src="assets/loading-please-wait-gif-8.gif" height="100%" width="100%" alt="waiting" />
+        </div>
+    </div>
+    <br />
+    <hr />
+    <br />
+ </div>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/jquery-ui-1.13.0.custom/jquery-ui.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>
