@@ -19,15 +19,7 @@ $(function () {
         { "status": "tsrain", "src": "assets/about_civil_tsrain.png", "forecast": "Isolated Storms" },
         { "status": "tstorm", "src": "assets/about_civil_tstorm.png", "forecast": "Thunderstorms" },
         { "status": "windy", "src": "assets/about_civil_windy.png", "forecast": "Windy" }];
-/*
-    var tmpWeather = [{ "date": 20211228, "weather": "pcloudy", "temp2m": { "max": 45, "min": 32 }, "wind10m_max": 2 },
-        { "date": 20211229, "weather": "cloudy", "temp2m": { "max": 50, "min": 34 }, "wind10m_max": 3 },
-        { "date": 20211230, "weather": "cloudy", "temp2m": { "max": 46, "min": 41 }, "wind10m_max": 2 },
-        { "date": 20211231, "weather": "cloudy", "temp2m": { "max": 54, "min": 39 }, "wind10m_max": 2 },
-        { "date": 20220101, "weather": "rain", "temp2m": { "max": 59, "min": 46 }, "wind10m_max": 2 },
-        { "date": 20220102, "weather": "rain", "temp2m": { "max": 54, "min": 25 }, "wind10m_max": 4 },
-        { "date": 20220103, "weather": "pcloudy", "temp2m": { "max": 28, "min": 23 }, "wind10m_max": 4 }];
-*/
+
     var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
     $(document).on({
@@ -111,57 +103,3 @@ $(function () {
 });
 // Write your JavaScript code.
 
-/* 
-        $.ajax({
-            type: "POST",
-            url: "https://www.7timer.info/bin/civillight.php?lon=-78&lat=40&ac=0&unit=" + units + "&output=json&tzshift=0",
-            dataType: "json",
-            success: function (response) {
-                $("#weatherList tr").slice(1).remove();
-                weatherData = response.dataseries;
-                $("#jsondata").text(JSON.stringify(weatherData));
-                tableBody = "";
-                $.each(response.dataseries, function (i, val) {
-                    dt = val.date.toString();
-                    formatDt = dt.substr(4, 2) + '/' + dt.substr(6, 2) + '/' + dt.substr(0, 4)
-                    tableBody += "<tr><td>" + formatDt + "</td>" +
-                        val.temp2m.max + "</td>/tr>" +
-                        "<td>" + val.weather + "</td><td>";
-                //    tableBody += "<tr><td>" + formatDt + "</td><td>" + val.weather + "</td><td>" +
-                //        val.temp2m.min + "</td><td>" +
-                //        val.temp2m.max + "</td>/tr>";
-                });
-                //for (i = 0; i < response.dataseries.length; i++) {
-                //    dt = response.dataseries[i].date.toString();
-                //    formatDt = dt.substr(4, 2) + '/' + dt.substr(6, 2) + '/' + dt.substr(0,4)
-                //    tableBody += "<tr><td>" + formatDt  + "</td><td>" + response.dataseries[i].weather + "</td><td>" +
-                //        response.dataseries[i].temp2m.min + "</td><td>" +
-                //        response.dataseries[i].temp2m.max + "</td>/tr>";
-                //}
-                $('#weatherList > tbody:last-child').append(tableBody);
-            },
-            error: function (xhr, status) {
-                alert(status);
-            }
-        });
-        
-        $.ajax({
-            type: "GET",
-            url: "https://www.7timer.info/bin/civillight.php?lon=-78&lat=40&lang=en&ac=0&unit=" + units + "&tzshift=0",
-            xhr: function () {// Seems like the only way to get access to the xhr object
-                var xhr = new XMLHttpRequest();
-                xhr.responseType = 'blob'
-                return xhr;
-            },
-            success: function (data, status, xhr) {
-                //alert(status);
-                const url = window.URL || window.webkitURL;
-                const src = url.createObjectURL(data);
-                //alert(src);
-                $("#weatherGraphic").attr('src', src);
-            },
-            error: function (xhr, status, emsg) {
-                alert(emsg);
-            }
-        })
-        */
