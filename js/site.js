@@ -61,7 +61,7 @@ $(function () {
                     });
 
                     tableBody += "<tr id='row" + i.toString() + "'><td>" + formatDt + "</td>" +
-                        "<td>" + val.temp2m.max + "</td>" +
+                        "<td style='text-align:right'>" + val.temp2m.max + "</td>" +
                         "<td><img src='" + src + "' /></td></tr>";
                 });
 
